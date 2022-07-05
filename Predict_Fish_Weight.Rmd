@@ -54,20 +54,48 @@ library(car)
 subsets(regsubsets.out,statistic="adjr2",legend="bottomright",main="Adjusted R^2")
 ```
 
-The best regressor model is whichever is the highest up the chart. In this case, it's going to be height and weight. 
+The best regressor model is whichever is the highest up the chart. In this case, it's going to be height and weight, with an adjusted R value of 0.9400. 
 
 ### Best Two regressor model
 
-The best two regressor model is whichever is closest to the subset size of 2. In this case, it is the same as the best regressor model which is are height and weight. 
+The best two regressor model is whichever is closest to the subset size of 2. In this case, it is the same as the best regressor model which are height and weight. 
 
 
 ## Pike
 
+```{r}
+Pike <- filter(Fish, Species == "Pike")
+Pike <- select(Pike, -Species) 
+```
+
 ### Best Models
+
+```{r}
+library(leaps)
+regsubsets.out <-
+    regsubsets(Weight ~ .,
+               data = Pike,
+               nbest = 1,       # 1 best model for each number of predictors
+               nvmax = NULL,    # NULL for no limit on number of variables
+               force.in = NULL, force.out = NULL,
+               method = "exhaustive")
+
+summary.out <- summary(regsubsets.out)
+as.data.frame(summary.out$outmat)
+library(car)
+subsets(regsubsets.out,statistic="adjr2",legend="bottomright",main="Adjusted R^2")
+```
+
+It seems, based on the plot above, that there are multiple models that would predict the weight of pikes. According to the plot above, Length1 and Length 2 are the best models, along with Length3, Height and Width. 
 
 ### Best Two regressor model
 
+The best two regressor model, on the other hand, are Length1 and Length3, as they are the closest to the subset size of 2. 
+
 ## Roach
+
+
+
 
 ### Best Models
 
