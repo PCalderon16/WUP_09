@@ -121,6 +121,6 @@ Based on the plot above, the best models that predict the weight of a roach are 
 
 ### Best Two regressor model
 
-The best two regresser model in predicting the weight of a roach are also Length3 and Weight. 
+The best two regressor model in predicting the weight of a roach are also Length3 and Weight. 
 
 ## Final Summary Statements
