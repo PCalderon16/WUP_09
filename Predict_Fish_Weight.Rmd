@@ -124,3 +124,5 @@ Based on the plot above, the best models that predict the weight of a roach are 
 The best two regressor model in predicting the weight of a roach are also Length3 and Weight. 
 
 ## Final Summary Statements
+
+The objective of this write up is to predict the weight of different types of fish using multiple regression. We analyzed the relationship between the weight of the fish and the multiple variables that may predict the former. Before determining the best regressor models for each type of fish, we made sure to filter out non-numerical variables in the data set which, in this case, was the species variable, a categorical variable. In finding the best model, we picked the model with the highest adjusted R squared value on the linear model. Meanwhile, in finding the best two regressor model, we picked the models that are closest to the subset size of 2. 
